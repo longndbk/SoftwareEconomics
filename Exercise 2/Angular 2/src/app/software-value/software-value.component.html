@@ -1,0 +1,145 @@
+<div id="section42" class="container-fluid">
+  <h2>Bảng tính toán giá trị phần mềm</h2>
+  <form>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered" id="table_CausePoint">
+        <thead>
+          <tr class="success">
+            <th>TT</th>
+            <th width="400">Hạng mục</th>
+            <th width="250">Diễn giải</th>
+            <th>Giá trị</th>
+            <th>Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>I</td>
+            <td>Tính điểm trường hợp sử dụng (Use case)</td>
+            <td></td>
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Điểm Actor (TAW)</td>
+            <td>Phụ lục III</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri"  disabled value = {{TAW}}>
+            </td>
+            <td>
+              <input type="text" class="form-control ">
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Điểm Use case (TBF)</td>
+            <td>Phụ lục IV</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri" disabled value = {{TBF}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Tính điểm UUCP</td>
+            <td>UUCP = TAW + TBF</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri"  disabled value = {{UUCP}}>
+
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Hệ số phức tạp về kỹ thuật - công nghệ (TCF)</td>
+            <td>TCF = 0.6 + (0.01 x TFW)</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri" value = {{TCF}} disabled>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Hệ số phức tạp về môi trường (EF)</td>
+            <td>EF = 1.4 + (-0.03 x EFW)</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri" value = {{EF}} disabled>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Tính điểm AUCP</td>
+            <td>AUCP = UUCP x TCF x EF</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri" value = {{AUCP}} disabled>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>II</td>
+            <td>Nội suy thời gian lao động (P)</td>
+            <td>P: người/giờ/AUCP</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri" value = {{P}} disabled>
+
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>III</td>
+            <td>Giá trị nỗ lực thực tế (E)</td>
+            <td>E = 10/6 x AUCP</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri" value = {{E}} disabled>
+
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>IV</td>
+            <td>Mức lương lao động bình quân (H)</td>
+            <td>H: người/giờ</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri" (input)= "H = $event.target.value">
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>V</td>
+            <td>Giá trị phần mềm nội bộ (G)</td>
+            <td>G = 1.4 x E x P x H</td>
+            <td>
+              <input type="text" class="form-control tbl7_giatri" value = {{G}} disabled>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn" id="btnExport_tbl3">Export</button>
+    </div>
+  </form>
+</div>

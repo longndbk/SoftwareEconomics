@@ -1,0 +1,265 @@
+<div id="section3" class="container-fluid">
+
+  <form>
+
+    <h2>Bảng tính toán hệ số phức tạp kĩ thuật-công nghệ</h2>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered">
+        <thead >
+          <tr class="success">
+            <th >TT</th>
+            <th >Các hệ số</th>
+            <th >Trọng số</th>
+            <th >Giá trị xếp hạng</th>
+            <th >Kết quả</th>
+            <th >Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td width="5.5%">I</td>
+            <td width="42%">Hệ số kĩ thuật - công nghệ (TFW)</td>
+            <td width="12.5%">
+
+            </td>
+            <td width="19.6%">
+
+            </td>
+            <td width="11%">
+
+            </td>
+            <td>
+
+            </td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Hệ thống phân tán</td>
+            <td>
+              2
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue1 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua1">
+               <input type="text" disabled class="form-control table5" value = {{rankValue1*2}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Tính chất đáp ứng tức thời hoặc yêu cầu đảm bảo thông lượng</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue2 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua2">
+              <input type="text" disabled class="form-control table5" value = {{rankValue2*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Hiệu quả sử dụng trực tuyến</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue3 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua3">
+               <input type="text" disabled class="form-control table5" value = {{rankValue3*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Độ phức tạp của xử lý bên trong</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue4 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua4">
+               <input type="text" disabled class="form-control table5" value = {{rankValue4*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Mã nguồn phải tái sử dụng được</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue5 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua5">
+               <input type="text" disabled class="form-control table5" value = {{rankValue5*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Dễ cài đặt</td>
+            <td>
+              0.5
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue6 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua6">
+               <input type="text" disabled class="form-control table5" value = {{rankValue6*0.5}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Dễ sử dụng</td>
+            <td>
+              0.5
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue7 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua7">
+               <input type="text" disabled class="form-control table5" value = {{rankValue7*0.5}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Khả năng chuyển đổi</td>
+            <td>
+              2
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue8 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua8">
+               <input type="text" disabled class="form-control table5" value = {{rankValue8*2}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Khả năng thay đổi</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue9 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua9">
+               <input type="text" disabled class="form-control table5" value = {{rankValue9*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Sử dụng đồng thời</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue10 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua10">
+               <input type="text" disabled class="form-control table5" value = {{rankValue10*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Có các tính năng bảo mật đặc biệt</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5"  (input)="rankValue11 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua11">
+               <input type="text" disabled class="form-control table5" value = {{rankValue11*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Cung cấp truy nhập trực tiếp tới các phần mềm của các hãng thứ ba</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue12 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua12">
+               <input type="text" disabled class="form-control table5" value = {{rankValue12*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Yêu cầu phương diện đào tạo đặc biệt cho người sử dụng</td>
+            <td>
+              1
+            </td>
+            <td>
+              <input type="text" class="form-control table5" (input)="rankValue13 = $event.target.value">
+            </td>
+            <td id="tbl5_ketqua13">
+               <input type="text" disabled class="form-control table5" value = {{rankValue13*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>II</td>
+            <td>Hệ số phức tap về kĩ thuật - công nghệ (TCF)</td>
+            <td>
+              TCF = 0.6 + (0.01 x TFW)
+            </td>
+            <td>
+
+            </td>
+            <td id="total_table5_ketqua">
+              <input type="text" disabled class="form-control table5" value = {{total}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </form>
+  <button onclick="tableToExcel('tbl5', 'Giá trị tương lai ròng')" type="button" class="btn" id="btnExport_tbl5" >Export</button>
+</div>

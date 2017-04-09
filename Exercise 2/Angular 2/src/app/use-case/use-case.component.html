@@ -1,0 +1,141 @@
+<div id="section2" class="container-fluid">
+    <h2>Bảng tính toán điểm các trường hợp sử dụng</h2>
+    <form>
+				<table class="table table-hover table-bordered" id="table_CausePoint">
+					<thead>
+						<tr class="success">
+							<th >TT</th>
+							<th >Loại</th>
+							<th >Số trường hợp sử dụng</th>
+							<th>Điểm của từng loại trường hợp sử dụng</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="danger">
+							<td>1</td>
+							<td>B</td>
+							<td>							
+							</td>
+							<td>							
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Đơn giản</td>
+							<td>						
+							    <input type="text" class="form-control" (input)="caseNumber1 = $event.target.value">							
+							</td>
+							<td id="case_point1">	
+								<input type="text" disabled class="form-control" value = {{caseNumber1*5}}>								
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Trung bình</td>
+							<td>								
+							    <input type="text" class="form-control " (input)="caseNumber2 = $event.target.value">						
+							</td>
+							<td id="case_point2">
+								<input type="text" disabled class="form-control" value = {{caseNumber2*10}}>												
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Phức tạp</td>
+							<td>							
+							    <input type="text" class="form-control " (input)="caseNumber3 = $event.target.value">						
+							</td>
+							<td id="case_point3">	
+								<input type="text" disabled class="form-control" value = {{caseNumber3*15}}>						
+							</td>
+						</tr>
+						<tr class="danger">
+							<td>2</td>
+							<td>M</td>
+							<td>						
+							</td>
+							<td>						
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Đơn giản</td>
+							<td>							
+							    <input type="text" class="form-control tbl4" (input)="caseNumber4 = $event.target.value">						
+							</td>
+							<td id="case_point4">
+								<input type="text" disabled class="form-control" value = {{caseNumber4*5*1.2}}>						
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Trung bình</td>
+							<td>							
+							    <input type="text" class="form-control tbl4" (input)="caseNumber5 = $event.target.value">						
+							</td>
+							<td id="case_point5">	
+								<input type="text" disabled class="form-control" value = {{caseNumber5*10*1.2}}>					
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Phức tạp</td>
+							<td>						
+							    <input type="text" class="form-control tbl4" (input)="caseNumber6 = $event.target.value">					
+							</td>
+							<td id="case_point6">	
+								<input type="text" disabled class="form-control" value = {{caseNumber6*15*1.2}}>						
+							</td>
+						</tr>
+						<tr class="danger">
+							<td>3</td>
+							<td>T</td>
+							<td>								
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Đơn giản</td>
+							<td>								
+							    <input type="text" class="form-control tbl4" (input)="caseNumber7 = $event.target.value">						
+							</td>
+							<td id="case_point7">	
+								<input type="text" disabled class="form-control" value = {{caseNumber7*5*1.5}}>				
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Trung bình</td>
+							<td>						
+							    <input type="text" class="form-control tbl4" (input)="caseNumber8 = $event.target.value">						
+							</td>
+							<td id="case_point8">	
+								<input type="text" disabled class="form-control" value = {{caseNumber8*10*1.5}}>						
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Phức tạp</td>
+							<td>							
+							    <input type="text" class="form-control tbl4" (input)="caseNumber9 = $event.target.value">						
+							</td>
+							<td id="case_point9">							
+								<input type="text" disabled class="form-control" value = {{caseNumber9*15*1.5}}>
+							</td>
+						</tr>
+						<tr >
+							<td></td>
+							<td>Cộng 1 + 2 + 3</td>
+							<td id="totalcasenum">	
+							</td>
+							<td id="totalCasePoint">
+								<input type="text" disabled class="form-control" value = {{total}}>							
+							</td>
+						</tr>
+					</tbody>
+				</table>
+	</form>
+	<button type="button" class="btn" onclick="tableToExcel('table44', 'Giá trị tương lai ròng')" >Export</button>
+  </div>

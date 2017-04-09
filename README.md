@@ -1,2 +1,0 @@
-# SoftwareEconomics
-SoftwareEconomics in HUST

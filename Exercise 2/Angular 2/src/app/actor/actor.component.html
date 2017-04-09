@@ -1,0 +1,75 @@
+<div id="section1" class="container-fluid">
+  <h2>Bảng tính toán điểm các tác nhân tương tác</h2>
+  <form>
+    <div class=" table-responsive">
+      <table class="table table-hover table-bordered" id="table_CausePoint">
+        <thead>
+          <tr class="success">
+            <th>TT</th>
+            <th>Loại tác nhân</th>
+            <th>Mô tả</th>
+            <th>Số tác nhân</th>
+            <th>Điểm của từng loại tác nhân</th>
+            <th>Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Đơn giản</td>
+            <td>Thuộc loại giao diện của chương trình</td>
+            <td>
+              <input type="text" class="form-control causeNumber"  (input)="causeNumber1 = $event.target.value" >
+            </td>
+            <td id="causePoint1">
+              <input type="text" disabled class="form-control causeNumber" value= {{causeNumber1*1}}>
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Trung bình</td>
+            <td>Giao diện tương tác hoặc phục vụ một giao thức hoạt động</td>
+            <td>
+              <input type="text" class="form-control causeNumber" (input)="causeNumber2 = $event.target.value">
+            </td>
+            <td id="causePoint2">
+              <input type="text" disabled class="form-control causeNumber" value = {{causeNumber2*2}} >
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Phức tạp</td>
+            <td>Giao diện đồ họa</td>
+            <td>
+              <input type="text" class="form-control causeNumber" (input)="causeNumber3 = $event.target.value">
+            </td>
+            <td id="causePoint3">
+              <input type="text" disabled class="form-control causeNumber" value = {{causeNumber3*3}} >
+            </td>
+            <td>
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Cộng (1 + 2 + 3)</td>
+            <td>TAW</td>
+            <td>
+            </td>
+            <td id="totalCauseNumber">
+               <input type="text" disabled class="form-control causeNumber" value = {{totalCauseNumber}} >
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button type="button" class="btn" onclick="tableToExcel('table_CausePoint', 'Giá trị tương lai ròng')">Export</button>
+  </form>
+</div>

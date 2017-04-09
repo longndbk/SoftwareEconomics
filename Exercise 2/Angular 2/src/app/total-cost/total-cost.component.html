@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div id="lightbox">
+    <form action="" method="post">
+      <span onmousedown="toggleOverlay()" class="fa fa-diamond" style="cursor: pointer; position: absolute; top:20px; right: 20px;"></span>
+      <h2>Bảng tổng hợp chi phí phần mềm</h2>
+      <table class="table table-responsive table-bordered table-hover" id="tbl_final">
+        <thead>
+          <tr class="success">
+            <th>TT</th>
+            <th>Khoản mục chi phí</th>
+            <th>Cách tính</th>
+            <th>Giá trị</th>
+            <th>Kí hiệu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Giá trị phần mềm</td>
+            <td>1.4 x E x P x H</td>
+            <td id="lightbox_G">
+              {{G}}
+            </td>
+            <td>G</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Chi phí chung</td>
+            <td>G x tỉ lệ</td>
+            <td id="lightbox_C">{{C}}</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Thu nhập chịu thuế tính trước</td>
+            <td>(G + C) x tỉ lệ</td>
+            <td id="lightbox_TL">{{TL}}</td>
+            <td>TL</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Chi phí phần mềm</td>
+            <td>G + C + TL</td>
+            <td id="lightbox_GPM">{{GPM}}</td>
+            <td>G(PM)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>TỔNG CỘNG</td>
+            <td>G(PM)</td>
+            <td id="lightbox_total">{{GPM}}</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <!--Progress-->
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+        style="width:65%">
+        65%
+      </div>
+      <div class="progress-bar progress-bar-striped progress-bar-danger active" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+        aria-valuemax="100" style="width:6%">
+        6%
+      </div>
+    </div>
+    <div>
+      <div class="progress" style="width: 7%; float: left;">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+          style="width:100%">
+        </div>
+      </div>
+      <div style="">&emsp;Chi phí chung</div>
+    </div>
+    <div style="clear: both;">
+      <div class="progress" style="width: 7%; float: left;">
+        <div class="progress-bar progress-bar-striped active progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0"
+          aria-valuemax="100" style="width:100%">
+        </div>
+      </div>
+      <div>&emsp;Thu nhập chịu thuế tính trước</div>
+    </div>
+    <!--Progress-->
+    
+  </div>
+</div>

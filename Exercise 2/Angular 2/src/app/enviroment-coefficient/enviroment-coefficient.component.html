@@ -1,0 +1,246 @@
+<div id="section41" class="container-fluid">
+  <form>
+    <h2>Bảng tính toán hệ số tác động môi trường và nhóm làm việc, hệ số phức tạp về môi trường</h2>
+    <div class=" table-responsive">
+      <table class="table table-hover table-bordered" id="table_CausePoint">
+        <thead>
+          <tr class="success">
+            <th>TT</th>
+            <th>Các hệ số tác động môi trường</th>
+            <th>Trọng số</th>
+            <th>Giá trị xếp hạng</th>
+            <th>Kết quả</th>
+            <th>Độ ổn định kinh nghiệm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td width="46">I</td>
+            <td width="448">Hệ số tác động môi trường và nhóm làm việc</td>
+            <td width="94">
+
+            </td>
+            <td width="93">
+
+            </td>
+            <td width="92" id="tbl6_efw" >
+            </td>
+            <td width="">
+
+            </td>
+          </tr>
+          <tr>
+            <td width="46"></td>
+            <td width="448">Đánh giá cho từng thành viên</td>
+            <td width="94">
+
+            </td>
+            <td width="93">
+
+            </td>
+            <td width="92">
+
+            </td>
+            <td width="">
+
+            </td>
+          </tr>
+          <tr>
+            <td width="46">1</td>
+            <td width="448">Có áp dụng quy trình phát triển phần mềm theo mẫu RUP và có hiểu biết về RUP hoặc quy trình phát triển phần mềm
+              tương đương</td>
+            <td width="94">
+              1.5
+            </td>
+            <td width="93">
+              <input type="text" class="form-control table6" (input)="rankValue1 = $event.target.value">
+            </td>
+            <td width="92" id="tbl6_ketqua1">
+              <input type="text" class="form-control" disabled value= {{rankValue1*1.5}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">2</td>
+            <td width="448">Có kinh nghiệm về ứng dụng tương tự</td>
+            <td width="94">
+              0.5
+            </td>
+            <td width="93">
+              <input type="text" class="form-control table6" (input)="rankValue2 = $event.target.value">
+            </td>
+            <td width="92" id="tbl6_ketqua2">
+              <input type="text" class="form-control" disabled value= {{rankValue2*0.5}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">3</td>
+            <td width="448">Có kinh nghiệm về hướng đối tượng</td>
+            <td width="94">
+              1
+            </td>
+            <td width="93">
+              <input type="text" class="form-control table6" (input)="rankValue3 = $event.target.value">
+            </td>
+            <td width="92" id="tbl6_ketqua3">
+              <input type="text" class="form-control" disabled value= {{rankValue3*1}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">I</td>
+            <td width="448">Có kinh nghiệm lãnh đạo nhóm</td>
+            <td width="94">
+              0.5
+            </td>
+            <td width="93">
+              <input type="text" class="form-control table6" (input)="rankValue4 = $event.target.value">
+            </td>
+            <td width="92" id="tbl6_ketqua4">
+              <input type="text" class="form-control" disabled value= {{rankValue4*1}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">I</td>
+            <td width="448">Tính chất năng động</td>
+            <td width="94">
+              1
+            </td>
+            <td width="93">
+              <input type="text" class="form-control table6" (input)="rankValue5 = $event.target.value">
+            </td>
+            <td width="92" id="tbl6_ketqua5">
+              <input type="text" class="form-control" disabled value= {{rankValue5*1}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46"></td>
+            <td width="448">Đánh giá chung cho dự án</td>
+            <td width="94">
+
+            </td>
+            <td width="93">
+
+            </td>
+            <td width="92">
+
+            </td>
+            <td width="">
+
+            </td>
+          </tr>
+          <tr>
+            <td width="46">6</td>
+            <td width="448">Độ ổn định của các yêu cầu</td>
+            <td width="94">
+              2
+            </td>
+            <td width="93">
+              <input type="text" class="form-control table6" (input)="rankValue6 = $event.target.value">
+            </td>
+            <td width="92" id="tbl6_ketqua6">
+              <input type="text" class="form-control" disabled value= {{rankValue6*2}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">7</td>
+            <td width="448">Sử dụng các nhân viên làm bán thời gian</td>
+            <td width="94">
+              -1
+            </td>
+            <td width="93">
+              <input type="text" class="form-control table6" (input)="rankValue7 = $event.target.value">
+            </td>
+            <td width="92" id="tbl6_ketqua6">
+              <input type="text" class="form-control" disabled value= {{rankValue7*-1}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">8</td>
+            <td width="448">Dùng ngôn ngữ lập trình loại khó</td>
+            <td width="94">
+              -1
+            </td>
+            <td width="93">
+              <input type="text" class="form-control table6" (input)="rankValue8 = $event.target.value">
+            </td>
+            <td width="92" id="tbl6_ketqua8">
+              <input type="text" class="form-control" disabled value= {{rankValue8*-1}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">II</td>
+            <td width="448">Hệ số phức tạp về môi trường (EF = 1.4 + (-0.03 x EFW))</td>
+            <td width="94">
+
+            </td>
+            <td width="93">
+
+            </td>
+            <td width="92" id="tbl6_ketqua9">
+              <input type="text" class="form-control" disabled value= {{EF}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">III</td>
+            <td width="448">Độ ổn định kinh nghiệm (ES)</td>
+            <td width="94">
+
+            </td>
+            <td width="93">
+
+            </td>
+            <td width="92" id="tbl6_ketqua10">
+              <input type="text" class="form-control" disabled value= {{ES}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td width="46">IV</td>
+            <td width="448">Nội suy thời gian lao động (P)</td>
+            <td width="94">
+
+            </td>
+            <td width="93">
+
+            </td>
+            <td width="92" id="tbl6_ketqua11">
+              <input type="text" class="form-control" disabled value= {{P}}>
+            </td>
+            <td width="">
+              <input type="text" class="form-control">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </form>
+  <button type="button" class="btn" onclick="tableToExcel('tbl6', 'Giá trị tương lai ròng')" id="btnExport_tbl6">Export</button>
+</div>

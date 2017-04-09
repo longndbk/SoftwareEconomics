@@ -1,0 +1,42 @@
+
+    {
+      "Table_name": "Bảng tính toán điểm các tác nhân tương tác",
+      "number_column" : 6,
+      "number_row" : 5,
+      "table_content" : {
+          "header" : [ "TT","Loại tác nhân","Mô tả","Số tác nhân",
+                        "Điểm của từng loại tác nhân","Ghi chú"
+          ],
+         "row_content" : [
+             {
+                 "stt" : "1",
+                 "actor_type": "Đơn giản",
+                 "description" : "Thuộc loại giao diện của chương trình",
+                 "type" : "text",
+                 "enabled" : "true"
+             },
+             {
+                 "stt" : "2",
+                 "actor_type": "Trung bình",
+                 "description" : "Giao diện tương tác hoặc phục vụ một giao thức hoạt động",
+                 "type" : "text",
+                 "enabled" : "true"
+             },
+             {
+                 "stt" : "3",
+                 "actor_type": "Phức tạp",
+                 "description" : "Giao diện đồ họa",
+                 "type" : "input",
+                 "enabled" : "true"
+             },
+             {
+                 "stt" : "4",
+                 "actor_type": "Cộng (1 + 2 + 3) ",
+                 "description" : "TAW",
+                 "type" : "input",
+                 "enabled" : "true"
+             }
+         ]
+      }
+    }
+    

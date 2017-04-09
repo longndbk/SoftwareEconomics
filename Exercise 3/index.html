@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Thông số tài chính cơ bản</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="image/logo.png" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$'], ["\\(", "\\)"]],
+                processEscapes: true
+            }
+        };
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'],
+        ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts:
+        ["TeX"] } });
+    </script>
+    <script src="js/xlsx.js"></script>
+    <script src="js/xlsx.min.js"></script>
+    <script src="js/xlsx.core.min.js"></script>
+
+    <!--<script src="controller/app.js"></script>-->
+    <!--<script src="controller/angular.js"></script>-->
+    <!--<script src="controller/angular.min.js"></script>-->
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
+    -->
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="menu-bar">
+            <h1>Nhóm 1 - BT tuần 3</h1>
+        </div>
+    </div>
+    <div id="content-website">
+        <div>
+            <h1>Thông số tài chính cơ bản</h1>
+            <label class="btn btn-primary btn-file">
+            Choose a file <input type="file" name="file" id="file" class="inputfile" hidden>
+        </label>
+            <!--<button type="" onclick="readData('data.xlsx')" class="btn btn-default">Import</button>-->
+
+        </div>
+        <div class="table-responsive">
+            <h1>Bảng số liệu dự án</h1>
+            <table class="table" id="table-basic-finance">
+                <thead>
+                    <th>Tháng</th>
+                    <th>Thu được (USD)</th>
+                    <th>Chi phí (USD)</th>
+                </thead>
+            </table>
+        </div>
+
+        <div class="table-responsive calculate">
+            <h1>Tính toán chỉ số</h1>
+            <table class="table" id="table-calculate">
+                <thead>
+                    <th>Chỉ số</th>
+                    <th>Giá trị</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Giá trị hiện thời</td>
+                        <td id="present-value"></td>
+                    </tr>
+                    <tr>
+                        <td>Giá trị tương lai</td>
+                        <td id="future-worth"></td>
+                    </tr>
+                    <tr>
+                        <td>Giá trị hiện tại dòng</td>
+                        <td id="net-present-value"></td>
+                    </tr>
+                    <tr>
+                        <td>Giá trị tương lai dòng</td>
+                        <td id="net-future-worth"></td>
+                    </tr>
+                    <tr>
+                        <td>Hệ số hoàn trả vốn và Hệ số niên kim</td>
+                        <td id="capital-recovery-factory">
+                            <span id="af"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Giá trị tương đương hàng năm</td>
+                        <td id="ae"></td>
+                    </tr>
+                    <tr>
+                        <td>Tỷ lệ hoàn vốn nội bộ</td>
+                        <td id="internal-rate-of-return"></td>
+                    </tr>
+                    <tr>
+                        <td>Tỷ lệ thu hồi vốn nội bộ thấp nhất được chấp nhận</td>
+                        <td id="minimum-acceptable-rate-of-return"></td>
+                    </tr>
+                    <tr>
+                        <td>Cân bằng dự án</td>
+                        <td id="pb"></td>
+                    </tr>
+                    <tr>
+                        <td>Thời gian hoàn vốn</td>
+                        <td id="payback-period"></td>
+                    </tr>
+                    <tr>
+                        <td>Chỉ số hoàn vốn đầu tư</td>
+                        <td id="return-on-investment"></td>
+                    </tr>
+                    <tr>
+                        <td>Hệ số thu nhập trên vốn sử dụng</td>
+                        <td id="return-on-capital-employed"></td>
+                    </tr>
+                    
+                </tbody>
+
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" async src="MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="MathJax/MathJax.js"></script>
+</body>
+
+</html>
