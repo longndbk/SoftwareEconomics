@@ -32,9 +32,10 @@
     <!--<script src="controller/app.js"></script>-->
     <!--<script src="controller/angular.js"></script>-->
     <!--<script src="controller/angular.min.js"></script>-->
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script>
-    -->
+    <script type="text/javascript" src="js/jquery.table2excel.js"></script>
+    <script type="text/javascript" src="js/Export2Excel.js"></script>
 </head>
 
 <body>
@@ -49,12 +50,12 @@
             <label class="btn btn-primary btn-file">
             Choose a file <input type="file" name="file" id="file" class="inputfile" hidden>
         </label>
-            <!--<button type="" onclick="readData('data.xlsx')" class="btn btn-default">Import</button>-->
+            <button type="submit" onclick="fnExcelReport('table-calculate');" class="btn btn-default" style="float:right">Export</button>
 
         </div>
-        <div class="table-responsive">
+        <div class="table-responsive ">
             <h1>Bảng số liệu dự án</h1>
-            <table class="table" id="table-basic-finance">
+            <table class="table table-hover table-bordered table-striped table-condensed" id="table-basic-finance">
                 <thead>
                     <th>Tháng</th>
                     <th>Thu được (USD)</th>
@@ -62,69 +63,83 @@
                 </thead>
             </table>
         </div>
-
-        <div class="table-responsive calculate">
+        <hr>
+        <div class="table-responsive calculate table-calculate">
             <h1>Tính toán chỉ số</h1>
-            <table class="table" id="table-calculate">
+            <table class="table table-hover table-bordered table-striped table-condensed" id="table-calculate">
                 <thead>
                     <th>Chỉ số</th>
+                    <th>Công thức</th>
                     <th>Giá trị</th>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Giá trị hiện thời</td>
+                        <td id="fomular-present-value"></td>
                         <td id="present-value"></td>
                     </tr>
                     <tr>
                         <td>Giá trị tương lai</td>
+                        <td id="fomular-future-worth"></td>
                         <td id="future-worth"></td>
                     </tr>
                     <tr>
                         <td>Giá trị hiện tại dòng</td>
+                        <td id="fomular-net-present-value"></td>
                         <td id="net-present-value"></td>
                     </tr>
                     <tr>
                         <td>Giá trị tương lai dòng</td>
+                        <td id="fomular-net-future-worth"></td>
                         <td id="net-future-worth"></td>
                     </tr>
                     <tr>
                         <td>Hệ số hoàn trả vốn và Hệ số niên kim</td>
+                        <td id="fomular-capital-recovery-factory"></td>
                         <td id="capital-recovery-factory">
                             <span id="af"></span>
                         </td>
                     </tr>
                     <tr>
                         <td>Giá trị tương đương hàng năm</td>
+                        <td id="fomular-ae"></td>
                         <td id="ae"></td>
                     </tr>
                     <tr>
                         <td>Tỷ lệ hoàn vốn nội bộ</td>
+                        <td id="fomular-internal-rate-of-return"></td>
                         <td id="internal-rate-of-return"></td>
                     </tr>
                     <tr>
                         <td>Tỷ lệ thu hồi vốn nội bộ thấp nhất được chấp nhận</td>
+                        <td id="fomular-minimum-acceptable-rate-of-return"></td>
                         <td id="minimum-acceptable-rate-of-return"></td>
                     </tr>
                     <tr>
                         <td>Cân bằng dự án</td>
+                        <td id="fomular-pb"></td>
                         <td id="pb"></td>
                     </tr>
                     <tr>
                         <td>Thời gian hoàn vốn</td>
+                        <td id="fomular-payback-period"></td>
                         <td id="payback-period"></td>
                     </tr>
                     <tr>
                         <td>Chỉ số hoàn vốn đầu tư</td>
+                        <td id="fomular-return-on-investment"></td>
                         <td id="return-on-investment"></td>
                     </tr>
                     <tr>
                         <td>Hệ số thu nhập trên vốn sử dụng</td>
+                        <td id="fomular-return-on-capital-employed"></td>
                         <td id="return-on-capital-employed"></td>
                     </tr>
-                    
+
                 </tbody>
 
         </div>
+        <iframe id="txtArea1" style="display:none"></iframe>
     </div>
     <script src="js/index.js"></script>
     <script type="text/javascript" async src="MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>

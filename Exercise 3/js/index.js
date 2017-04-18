@@ -36,22 +36,23 @@ function handleFile(e) {
 }
 
 function calculate(fomular, id, value) {
-
+    var fm = document.getElementById("fomular-" + id);
+    fm.innerHTML = fomular;
     var el = document.getElementById(id);
-    el.innerHTML = fomular + " " + value;
-    $("#" + id).css("font-size", "150%");
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub, el]);
+    el.innerHTML = value;
+    $("#fomular").css("font-size", "150%");
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, fm]);
 }
 
 function loadAllCalculate() {
     //Calculate Present-value
     var x = interest_rate + 1;
-    var presentValue = "$ PV = \\frac{FW(n)}{(1+i)^n} = $";
+    var presentValue = "$ PV = \\frac{FW(n)}{(1+i)^n} $";
     calculate(presentValue, "present-value", json[0].chi_phi);
 
     //Calculate Future-Worth
     cost = json[0].chi_phi * Math.pow(x, json.length);
-    var futureWorth = "$ FW(n) = PV(1+i)^n = $";
+    var futureWorth = "$ FW(n) = PV(1+i)^n $";
     calculate(futureWorth, "future-worth", cost.toFixed(2));
 
     //Calculate Net-present-value
@@ -60,7 +61,7 @@ function loadAllCalculate() {
         var ci = json[i].thu_duoc - json[i].chi_phi;
         npv += ci / Math.pow(x, i);
     }
-    var netPresentValue = "$ NPV = \\sum_{t=0}^{t = T} \\frac{C_t}{(1+i)^t} = $";
+    var netPresentValue = "$ NPV = \\sum_{t=0}^{t = T} \\frac{C_t}{(1+i)^t} $";
     calculate(netPresentValue, "net-present-value", npv.toFixed(2));
 
     //Calculate Net-future-worth
@@ -69,28 +70,28 @@ function loadAllCalculate() {
         var ci = json[i].thu_duoc - json[i].chi_phi;
         cost += ci * Math.pow(x, json.length - i - 1);
     }
-    var netFutureWorth = "$ NFW = \\sum_{t=0}^{T} C_t(1+i)^{n - 1} = $";
+    var netFutureWorth = "$ NFW = \\sum_{t=0}^{T} C_t(1+i)^{n - 1} $";
     calculate(netFutureWorth, "net-future-worth", cost.toFixed(2));
 
     //Calculate capotal-recovery-factory
     var y = Math.pow(x, json.length - 1);
     var crf = interest_rate * y / (-1 + y);
-    var capitalRecoveryFactory = "$ CRF = \\frac{i(1+i)^n}{(1+i)^n - 1} = $";
+    var capitalRecoveryFactory = "$ CRF = \\frac{i(1+i)^n}{(1+i)^n - 1} \\text{ và }AF = \\frac{1}{CRF}$";
     calculate(capitalRecoveryFactory, "capital-recovery-factory", crf.toFixed(2));
     var el = document.getElementById("capital-recovery-factory");
-    el.appendChild(document.createTextNode(" $AF = $" + " " + (1 / crf).toFixed(2)));
+    el.appendChild(document.createTextNode(" và " + " " + (1 / crf).toFixed(2)));
     $("#af").css("font-size", "150%");
     MathJax.Hub.Queue(["Typeset", MathJax.Hub, el]);
 
     //Calculate AE
     cost = 0;
-    var ae = "$ AE = NPV \\times CRF = $";
+    var ae = "$ AE = NPV \\times CRF $";
     cost = npv * crf;
     calculate(ae, "ae", cost.toFixed(2));
 
 
     //Calculate minimum acceptable rate of return 
-    var averageCost = 0
+    var averageCost = 0;
     var averageProfit = 0;
     cost = 0;
     for (var i = 0; i < json.length; i++) {
@@ -98,12 +99,12 @@ function loadAllCalculate() {
         averageProfit += parseFloat(json[i].thu_duoc);
     }
     cost = averageProfit / averageCost;
-    var minimumAcceptableRateOfReturn = "$ ARR = {\\text{Lợi nhuận trung bình}\\over \\text{Chi phí trung bình}} = $"
+    var minimumAcceptableRateOfReturn = "$ ARR = {\\text{Lợi nhuận trung bình}\\over \\text{Chi phí trung bình}}$"
     calculate(minimumAcceptableRateOfReturn, "minimum-acceptable-rate-of-return", cost.toFixed(2));
 
     //Calculate return on investment
     var npv_chiphi = 0;
-    var returnOnInvestment = "$ROI = {{NPV(\\text{Thu nhập - Chi phí})}\\over {NPV(\\text{Chi phí})}} = $";
+    var returnOnInvestment = "$ROI = {{NPV(\\text{Thu nhập - Chi phí})}\\over {NPV(\\text{Chi phí})}} $";
     for (var i = 0; i < json.length; i++) {
         npv_chiphi += json[i].chi_phi / Math.pow(x, i);
     }
@@ -111,7 +112,7 @@ function loadAllCalculate() {
     calculate(returnOnInvestment, "return-on-investment", roi.toFixed(2));
 
     //Calculate project balance
-    var pb = "$ PB(t) = \\sum_{k=0}^{t} \\frac{C_k}{(1+i)^k} = $";
+    var pb = "$ PB(t) = \\sum_{k=0}^{t} \\frac{C_k}{(1+i)^k} $";
     cost = 0;
     var time_payback_period = 0;
     var check = true;
@@ -134,14 +135,14 @@ function loadAllCalculate() {
         calculate(paybackPeriod, "payback-period", "năm " + (time_payback_period - 1) + " - " + time_payback_period);
 
     //Calculate return on capital-employed
-    var roce = "$ROCE = {{NPV(\\text{Doanh thu trước thuế})}\\over {NPV(\\text{Chi phí})}} = $";
+    var roce = "$ROCE = {{NPV(\\text{Doanh thu trước thuế})}\\over {NPV(\\text{Chi phí})}} $";
     var npv_doanhthu = 0;
     npv_chiphi = 0;
     for (var i = 0; i < json.length; i++) {
         npv_doanhthu += json[i].thu_duoc / Math.pow(x, i);
         npv_chiphi += json[i].chi_phi / Math.pow(x, i);
     }
-    cost = npv_doanhthu/npv_chiphi;
+    cost = npv_doanhthu / npv_chiphi;
     calculate(roce, "return-on-capital-employed", cost.toFixed(2));
     /**
      * Calculate internal rate of return
@@ -164,7 +165,7 @@ function loadAllCalculate() {
             var ci = json[i].thu_duoc - json[i].chi_phi;
             npv2 += ci / Math.pow(r2, i);
         }
-        irr = (npv2*r1 + npv1*r2)/(Math.abs(npv1) + Math.abs(npv2));
+        irr = (npv2 * r1 + npv1 * r2) / (Math.abs(npv1) + Math.abs(npv2));
     }
     else {
         r2 = 0.5;
@@ -173,9 +174,9 @@ function loadAllCalculate() {
             var ci = json[i].thu_duoc - json[i].chi_phi;
             npv2 += ci / Math.pow(r2, i);
         }
-        irr = (npv2*r1 + npv1*r2)/(Math.abs(npv1) + Math.abs(npv2));
+        irr = (npv2 * r1 + npv1 * r2) / (Math.abs(npv1) + Math.abs(npv2));
     }
-    calculate(internalRateOfReturn, "internal-rate-of-return", "=> Giá trị = "+ (irr*100).toFixed(2) +"%");
+    calculate(internalRateOfReturn, "internal-rate-of-return", (irr * 100).toFixed(2) + "%");
 
 }
 //Change event to dropdownlist

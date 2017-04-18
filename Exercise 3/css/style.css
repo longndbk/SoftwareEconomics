@@ -5,6 +5,9 @@ html {
 	/*position: absolute;*/
 	/*overflow: hidden;*/
 }
+h1 {
+	text-align: center;
+}
 #content-website {
 	width: 1024px;
 	margin: 0 auto;
